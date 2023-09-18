@@ -39,23 +39,6 @@ let schema = new mongoose.Schema(
       },
     ],
     skills: [String],
-    rating: {
-      type: Number,
-      max: 5.0,
-      default: -1.0,
-      validate: {
-        validator: function (v) {
-          return v >= -1.0 && v <= 5.0;
-        },
-        msg: "Invalid rating",
-      },
-    },
-    resume: {
-      type: String,
-    },
-    profile: {
-      type: String,
-    },
   },
   { collation: { locale: "en" } }
 );
