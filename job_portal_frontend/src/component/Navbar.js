@@ -39,17 +39,11 @@ const Navbar = (props) => {
         {isAuth() ? (
           userType() === "recruiter" ? (
             <>
-              <Button color="inherit" onClick={() => handleClick("/home")}>
-                Home
-              </Button>
-              <Button color="inherit" onClick={() => handleClick("/addjob")}>
-                Add Jobs
-              </Button>
               <Button color="inherit" onClick={() => handleClick("/myjobs")}>
                 My Jobs
               </Button>
-              <Button color="inherit" onClick={() => handleClick("/employees")}>
-                Employees
+              <Button color="inherit" onClick={() => handleClick("/addjob")}>
+                Add Jobs
               </Button>
               <Button color="inherit" onClick={() => handleClick("/profile")}>
                 Profile

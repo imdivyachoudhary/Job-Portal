@@ -9,6 +9,11 @@ import Signup from "./component/Signup";
 import Home from "./component/Home";
 import Applications from "./component/Applications";
 import Profile from "./component/Profile";
+import CreateJobs from "./component/recruiter/CreateJobs";
+import MyJobs from "./component/recruiter/MyJobs";
+import JobApplications from "./component/recruiter/JobApplications";
+import AcceptedApplicants from "./component/recruiter/AcceptedApplicants";
+import RecruiterProfile from "./component/recruiter/Profile";
 import MessagePopup from "./lib/MessagePopup";
 import { userType } from "./lib/isAuth";
 
@@ -43,13 +48,21 @@ function App() {
           </Grid>
           <Grid item className={classes.body}>
             <Routes>
-              <Route exact path="/" element={<Navigate to={userType() ? "/home" : "/login"} />} />
+              <Route exact path="/" element={<Navigate to={userType() ? userType()==="recruiter" ? "/myjobs" : "/home" : "/login"} />} />
               <Route exact path="/login" element={<Login />} />
               <Route exact path="/signup" element={<Signup />} />
               <Route exact path="/logout" element={<Logout />} />
               <Route exact path="/home" element={<Home />} />
               <Route exact path="/applications" element={<Applications />} />
-              <Route exact path="/profile" element={<Profile />} />
+              <Route exact path="/profile" element={userType() === "recruiter" ? (
+                  <RecruiterProfile />
+                ) : (
+                  <Profile />
+                )} />
+              <Route exact path="/addjob" element={<CreateJobs />} />
+              <Route exact path="/myjobs" element={<MyJobs />} />
+              <Route exact path="/job/applications/:jobId" element={<JobApplications />} />
+              <Route exact path="/employees" element={<AcceptedApplicants />} />
               <Route element={<Navigate to="/" />} />
             </Routes>
           </Grid>

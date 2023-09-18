@@ -40,7 +40,7 @@ const MultifieldInput = (props) => {
         <Grid item container className={classes.inputBox} key={key}>
           <Grid item xs={6}>
             <TextField
-              label={`Institution Name #${key + 1}`}
+              label={`Institution Name`}
               value={education[key].institutionName}
               onChange={(event) => {
                 const newEdu = [...education];
