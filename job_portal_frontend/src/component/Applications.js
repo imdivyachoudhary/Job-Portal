@@ -106,6 +106,7 @@ const ApplicationTile = (props) => {
               style={{
                 background: colorSet[application.status],
                 color: "#ffffff",
+                height: "auto"
               }}
             >
               {application.status}

@@ -407,7 +407,7 @@ const ApplicationTile = (props) => {
             }}
             onClick={() => updateStatus("accepted")}
           >
-            Shortlist
+            Accept
           </Button>
         </Grid>
         <Grid item xs>
@@ -451,7 +451,7 @@ const ApplicationTile = (props) => {
               height: "auto"
             }}
           >
-            Shortlisted
+            Accepted
           </Paper>
         </Grid>
       </>
