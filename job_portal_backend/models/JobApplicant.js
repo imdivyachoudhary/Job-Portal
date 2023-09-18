@@ -16,6 +16,10 @@ let schema = new mongoose.Schema(
           type: String,
           required: true,
         },
+        branchName: {
+          type: String,
+          required: true,
+        },
         startYear: {
           type: Number,
           min: 1930,

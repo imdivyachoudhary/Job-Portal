@@ -38,48 +38,64 @@ const MultifieldInput = (props) => {
     <>
       {education.map((obj, key) => (
         <Grid item container className={classes.inputBox} key={key}>
-          <Grid item xs={6}>
-            <TextField
-              label={`Institution Name`}
-              value={education[key].institutionName}
-              onChange={(event) => {
-                const newEdu = [...education];
-                newEdu[key].institutionName = event.target.value;
-                setEducation(newEdu);
-              }}
-              variant="outlined"
-              fullWidth
-            />
+          <Grid item container xs={12} >
+            <Grid item xs={6}>
+              <TextField
+                label={`Institution Name`}
+                value={education[key].institutionName}
+                onChange={(event) => {
+                  const newEdu = [...education];
+                  newEdu[key].institutionName = event.target.value;
+                  setEducation(newEdu);
+                }}
+                variant="outlined"
+                fullWidth
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <TextField
+                label={`Branch`}
+                value={education[key].branchName}
+                onChange={(event) => {
+                  const newEdu = [...education];
+                  newEdu[key].branchName = event.target.value;
+                  setEducation(newEdu);
+                }}
+                variant="outlined"
+                fullWidth
+              />
+            </Grid>
           </Grid>
-          <Grid item xs={3}>
-            <TextField
-              label="Start Year"
-              value={obj.startYear}
-              variant="outlined"
-              type="number"
-              onChange={(event) => {
-                const newEdu = [...education];
-                newEdu[key].startYear = event.target.value;
-                setEducation(newEdu);
-              }}
-            />
-          </Grid>
-          <Grid item xs={3}>
-            <TextField
-              label="End Year"
-              value={obj.endYear}
-              variant="outlined"
-              type="number"
-              onChange={(event) => {
-                const newEdu = [...education];
-                newEdu[key].endYear = event.target.value;
-                setEducation(newEdu);
-              }}
-            />
+          <Grid item container xs={12} style={{ marginTop: "20px" }}>
+            <Grid item xs={3}>
+              <TextField
+                label="Start Year"
+                value={obj.startYear}
+                variant="outlined"
+                type="number"
+                onChange={(event) => {
+                  const newEdu = [...education];
+                  newEdu[key].startYear = event.target.value;
+                  setEducation(newEdu);
+                }}
+              />
+            </Grid>
+            <Grid item xs={3}>
+              <TextField
+                label="End Year"
+                value={obj.endYear}
+                variant="outlined"
+                type="number"
+                onChange={(event) => {
+                  const newEdu = [...education];
+                  newEdu[key].endYear = event.target.value;
+                  setEducation(newEdu);
+                }}
+              />
+            </Grid>
           </Grid>
         </Grid>
       ))}
-      
     </>
   );
 };
@@ -131,6 +147,7 @@ const Profile = (props) => {
           setEducation(
             response.data.education.map((edu) => ({
               institutionName: edu.institutionName ? edu.institutionName : "",
+              branchName: edu.branchName ? edu.branchName : "",
               startYear: edu.startYear ? edu.startYear : "",
               endYear: edu.endYear ? edu.endYear : "",
             }))
@@ -269,9 +286,6 @@ const Profile = (props) => {
           </Paper>
         </Grid>
       </Grid>
-      {/* <Modal open={open} onClose={handleClose} className={classes.popupDialog}> */}
-
-      {/* </Modal> */}
     </>
   );
 };
