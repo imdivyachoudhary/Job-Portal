@@ -7,6 +7,8 @@ import Login from "./component/Login";
 import Logout from "./component/Logout";
 import Signup from "./component/Signup";
 import Home from "./component/Home";
+import Applications from "./component/Applications";
+import Profile from "./component/Profile";
 import MessagePopup from "./lib/MessagePopup";
 import { userType } from "./lib/isAuth";
 
@@ -46,6 +48,8 @@ function App() {
               <Route exact path="/signup" element={<Signup />} />
               <Route exact path="/logout" element={<Logout />} />
               <Route exact path="/home" element={<Home />} />
+              <Route exact path="/applications" element={<Applications />} />
+              <Route exact path="/profile" element={<Profile />} />
               <Route element={<Navigate to="/" />} />
             </Routes>
           </Grid>
