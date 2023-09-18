@@ -7,7 +7,6 @@ const JobApplicant = require("../models/JobApplicant");
 const Recruiter = require("../models/Recruiter");
 const Job = require("../models/Job");
 const Application = require("../models/Application");
-const Rating = require("../models/Rating");
 
 const router = express.Router();
 
